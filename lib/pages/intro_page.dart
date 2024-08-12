@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sushi_app/components/button.dart';
 
 class IntroPage extends StatelessWidget {
-  const IntroPage({super.key});
+   IntroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,10 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 100),
-            const MyButton(text: "Get Started")
+             MyButton(text: "Get Started", onTap: () { 
+                Navigator.pushNamed(context, '/menupage'); 
+              },
+            )
           ],
         ),
       ),
