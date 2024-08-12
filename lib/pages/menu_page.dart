@@ -11,7 +11,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color.fromARGB(255, 219, 212, 211),
+      backgroundColor: const Color.fromARGB(255, 219, 212, 211),
       appBar: AppBar(
         backgroundColor:Colors.transparent,
         elevation: 0,
