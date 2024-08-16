@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_app/components/button.dart';
+import 'package:sushi_app/components/food_tile.dart';
 import 'package:sushi_app/models/food.dart';
 import 'package:sushi_app/theme/colors.dart';
 
@@ -12,8 +13,16 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   List<Food> foodMenu = [
-    Food(name: "salmon", price: "10.00", imagePath: "lib/images/sushi.png", rating: "2.5"),
-    Food(name: "tuna", price: "12.00", imagePath: "lib/images/sushi.png", rating: "3.5"),
+    Food(
+        name: "Salmon",
+        price: "10.00",
+        imagePath: "lib/images/sushi.png",
+        rating: "2.5"),
+    Food(
+        name: "Tuna",
+        price: "12.00",
+        imagePath: "lib/images/sushi.png",
+        rating: "3.5"),
   ];
 
   @override
@@ -29,10 +38,11 @@ class _MenuPageState extends State<MenuPage> {
         ),
         title: Text(
           "Tokyo",
-          style: TextStyle(color: Colors.grey[900]),
+          style: TextStyle(color: Colors.grey[900], fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -52,6 +62,7 @@ class _MenuPageState extends State<MenuPage> {
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -75,9 +86,14 @@ class _MenuPageState extends State<MenuPage> {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
               decoration: InputDecoration(
+                hintText: "Search for sushi...",
+                hintStyle: TextStyle(color: Colors.grey[500]),
+                prefixIcon: Icon(Icons.search, color: Colors.grey[500]),
                 border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(20)),
+                filled: true,
+                fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(20),
@@ -98,7 +114,17 @@ class _MenuPageState extends State<MenuPage> {
             ),
           ),
           const SizedBox(height: 10),
-          // Add more widgets here to display the food menu
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: foodMenu.length,
+                itemBuilder: (context, index) => FoodTile(food: foodMenu[index]),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20), 
         ],
       ),
     );
