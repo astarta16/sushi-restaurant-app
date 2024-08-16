@@ -38,7 +38,10 @@ class _MenuPageState extends State<MenuPage> {
         ),
         title: Text(
           "Tokyo",
-          style: TextStyle(color: Colors.grey[900], fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.grey[900],
+              fontSize: 24,
+              fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
@@ -116,15 +119,46 @@ class _MenuPageState extends State<MenuPage> {
           const SizedBox(height: 10),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 25.0),
+              padding: const EdgeInsets.only(left: 5.0),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: foodMenu.length,
-                itemBuilder: (context, index) => FoodTile(food: foodMenu[index]),
+                itemBuilder: (context, index) =>
+                    FoodTile(food: foodMenu[index]),
               ),
             ),
           ),
-          const SizedBox(height: 20), 
+          const SizedBox(height: 20),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[300],  
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset('lib/images/sushi_three.png', height: 60),
+               const  Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "Salmon Eggs",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 16),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '\$21.00',
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                  ],
+                ),
+                const Icon(Icons.favorite_outline, color: Colors.red, size: 28)
+              ],
+            ),
+          ),
         ],
       ),
     );
