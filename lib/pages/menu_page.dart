@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_app/components/button.dart';
+import 'package:sushi_app/models/food.dart';
 import 'package:sushi_app/theme/colors.dart';
 
 class MenuPage extends StatefulWidget {
@@ -10,10 +11,15 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  List<Food> foodMenu = [
+    Food(name: "salmon", price: "10.00", imagePath: "lib/images/sushi.png", rating: "2.5"),
+    Food(name: "tuna", price: "12.00", imagePath: "lib/images/sushi.png", rating: "3.5"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 224, 216, 214),
+      backgroundColor: const Color.fromARGB(255, 224, 216, 214),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -78,7 +84,21 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ),
             ),
-          )
+          ),
+          const SizedBox(height: 25.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              "Food Menu",
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                color: Colors.grey,
+                fontSize: 18,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          // Add more widgets here to display the food menu
         ],
       ),
     );
