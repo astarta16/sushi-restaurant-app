@@ -17,6 +17,7 @@ class _MenuPageState extends State<MenuPage> {
         elevation: 0,
         leading:Icon(Icons.menu, 
         color: Colors.grey[900],),
+        title: Text("Tokyo", style: TextStyle(color: Colors.grey[900]),),
         ),
     );
   
