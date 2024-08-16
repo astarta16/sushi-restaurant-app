@@ -13,7 +13,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 219, 212, 211),
+      backgroundColor: Color.fromARGB(255, 224, 216, 214),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -48,7 +48,7 @@ class _MenuPageState extends State<MenuPage> {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 10), 
+                    const SizedBox(height: 10),
                     MyButton(
                       text: "Redeem",
                       onTap: () {},
@@ -62,6 +62,9 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
+          const SizedBox(
+            height: 20.0,
+          )
         ],
       ),
     );
