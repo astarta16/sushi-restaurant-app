@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sushi_app/components/button.dart';
 import 'package:sushi_app/components/food_tile.dart';
 import 'package:sushi_app/models/food.dart';
+import 'package:sushi_app/pages/food_details_page.dart';
 import 'package:sushi_app/theme/colors.dart';
 
 class MenuPage extends StatefulWidget {
@@ -24,6 +25,10 @@ class _MenuPageState extends State<MenuPage> {
         imagePath: "lib/images/sushi.png",
         rating: "3.5"),
   ];
+
+void navigateToFoodDetails(int index) {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetailsPage(),),);
+}
 
   @override
   Widget build(BuildContext context) {
@@ -118,16 +123,19 @@ class _MenuPageState extends State<MenuPage> {
           ),
           const SizedBox(height: 10),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 5.0),
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: foodMenu.length,
-                itemBuilder: (context, index) =>
-                    FoodTile(food: foodMenu[index]),
-              ),
-            ),
-          ),
+  child: Padding(
+    padding: const EdgeInsets.only(left: 5.0),
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: foodMenu.length,
+      itemBuilder: (context, index) => FoodTile(
+        food: foodMenu[index],
+        onTap: () => navigateToFoodDetails(index),
+      ),
+    ),
+  ),
+),
+
           const SizedBox(height: 20),
           Container(
             decoration: BoxDecoration(
