@@ -20,12 +20,14 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
       body: Column(
         children: [
           Expanded(
-              child: ListView(
-            children: [
-              Image.asset(widget.food.imagePath, height: 200),
-              const SizedBox(height: 25),
-            ],
-          ))
+            child: ListView(
+              children: [
+                Image.asset(widget.food.imagePath, height: 200),
+                const SizedBox(height: 25),
+                Row()
+              ],
+            ),
+          )
         ],
       ),
     );

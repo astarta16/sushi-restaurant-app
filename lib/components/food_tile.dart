@@ -3,9 +3,7 @@ import 'package:sushi_app/models/food.dart';
 
 class FoodTile extends StatelessWidget {
   final Food food;
-    final void Function()? onTap;
-
-
+  final void Function()? onTap;
 
   const FoodTile({super.key, required this.food, this.onTap});
 

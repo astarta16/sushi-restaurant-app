@@ -26,12 +26,16 @@ class _MenuPageState extends State<MenuPage> {
         rating: "3.5"),
   ];
 
-void navigateToFoodDetails(int index) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetailsPage(food: foodMenu[index],
-  ),
-  ),
-  );
-}
+  void navigateToFoodDetails(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FoodDetailsPage(
+          food: foodMenu[index],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -126,38 +130,38 @@ void navigateToFoodDetails(int index) {
           ),
           const SizedBox(height: 10),
           Expanded(
-  child: Padding(
-    padding: const EdgeInsets.only(left: 5.0),
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: foodMenu.length,
-      itemBuilder: (context, index) => FoodTile(
-        food: foodMenu[index],
-        onTap: () => navigateToFoodDetails(index),
-      ),
-    ),
-  ),
-),
-
+            child: Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: foodMenu.length,
+                itemBuilder: (context, index) => FoodTile(
+                  food: foodMenu[index],
+                  onTap: () => navigateToFoodDetails(index),
+                ),
+              ),
+            ),
+          ),
           const SizedBox(height: 20),
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey[300],  
+              color: Colors.grey[300],
               borderRadius: BorderRadius.circular(20),
             ),
-            margin: const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
+            margin:
+                const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
             padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('lib/images/sushi_three.png', height: 60),
-               const  Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
                       "Salmon Eggs",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700, fontSize: 16),
+                      style:
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                     ),
                     SizedBox(height: 10),
                     Text(

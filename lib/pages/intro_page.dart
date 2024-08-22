@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sushi_app/components/button.dart';
 
 class IntroPage extends StatelessWidget {
-   IntroPage({super.key});
+  IntroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +25,14 @@ class IntroPage extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Image.asset('lib/images/sushi_set.png')),
-            const  Text (
-                  "THE TASTE OF JAPANECE FOOD",
-                  style: TextStyle(
-                    fontSize: 37,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              
-            
+            const Text(
+              "THE TASTE OF JAPANECE FOOD",
+              style: TextStyle(
+                fontSize: 37,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
+            ),
             const SizedBox(height: 25),
             const Text(
               "the real taste of the most popular Japanice foot from anywhere and anytime",
@@ -45,8 +43,10 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 100),
-             MyButton(text: "Get Started", onTap: () { 
-                Navigator.pushNamed(context, '/menupage'); 
+            MyButton(
+              text: "Get Started",
+              onTap: () {
+                Navigator.pushNamed(context, '/menupage');
               },
             )
           ],

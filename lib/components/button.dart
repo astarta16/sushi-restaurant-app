@@ -18,7 +18,6 @@ class MyButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: Color.fromARGB(255, 182, 137, 134),
             borderRadius: BorderRadius.circular(40)),
-        // ignore: sort_child_properties_last
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -27,7 +26,7 @@ class MyButton extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             const SizedBox(width: 10),
-          const Icon(
+            const Icon(
               Icons.arrow_forward,
               color: Colors.white,
             ),
