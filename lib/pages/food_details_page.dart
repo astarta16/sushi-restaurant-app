@@ -20,12 +20,44 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
       body: Column(
         children: [
           Expanded(
-            child: ListView(
-              children: [
-                Image.asset(widget.food.imagePath, height: 200),
-                const SizedBox(height: 25),
-                Row()
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: ListView(
+                children: [
+                  Image.asset(widget.food.imagePath, height: 200),
+                  const SizedBox(height: 25),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.orange[400],
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        widget.food.rating,
+                        style: TextStyle(
+                            color: Colors.grey[600],
+                            fontWeight: FontWeight.w700),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    widget.food.name,
+                    style: const TextStyle(fontSize: 28),
+                  ),
+                  const SizedBox(height: 30),
+                  Text(
+                    "Description",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey[800],
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10)
+                ],
+              ),
             ),
           )
         ],
