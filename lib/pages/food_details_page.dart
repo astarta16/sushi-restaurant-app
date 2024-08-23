@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_app/models/food.dart';
-import 'package:sushi_app/theme/colors.dart';
+import 'package:sushi_app/theme/colors.dart'; // Assuming this is where primaryColor is defined
 
 class FoodDetailsPage extends StatefulWidget {
   final Food food;
@@ -13,13 +13,15 @@ class FoodDetailsPage extends StatefulWidget {
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
   int quantityCount = 0;
 
-  void decrismentQuantity() {
-    setState(() {
-      quantityCount--;
-    });
+  void decrementQuantity() {
+    if (quantityCount > 0) {
+      setState(() {
+        quantityCount--;
+      });
+    }
   }
 
-  void incrismentQuantity() {
+  void incrementQuantity() {
     setState(() {
       quantityCount++;
     });
@@ -49,11 +51,12 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       ),
                       const SizedBox(width: 10),
                       Text(
-                        widget.food.rating,
+                        "${widget.food.rating}",
                         style: TextStyle(
-                            color: Colors.grey[600],
-                            fontWeight: FontWeight.w700),
-                      )
+                          color: Colors.grey[600],
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -72,7 +75,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna or imitation crab meat.",
+                    "Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna, or imitation crab meat.",
                     style: TextStyle(
                       color: Colors.grey[800],
                       fontSize: 14,
@@ -83,36 +86,39 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
               ),
             ),
           ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(25),
-                  color: primaryColor,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "\$" + widget.food.price,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.remove, color: Colors.white),
-                            onPressed: decrismentQuantity,
-                          ),
-                        ],
-                      )
-                    ],
+          Container(
+            decoration: BoxDecoration(color: primaryColor),
+            padding: const EdgeInsets.all(25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "\$${widget.food.price}",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
                   ),
                 ),
-              )
-            ],
-          )
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.remove, color: Colors.white),
+                      onPressed: decrementQuantity,
+                    ),
+                    Text(
+                      '$quantityCount',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.add, color: Colors.white),
+                      onPressed: incrementQuantity,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
