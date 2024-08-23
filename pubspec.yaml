@@ -64,6 +64,7 @@ flutter:
     - lib/images/sushi_stick.png
     - lib/images/sushi_three.png
     - lib/images/sushi.png
+    - lib/images/sushi_img.png
 
   #   - images/a_dot_ham.jpeg
 

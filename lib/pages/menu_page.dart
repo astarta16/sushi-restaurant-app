@@ -22,8 +22,23 @@ class _MenuPageState extends State<MenuPage> {
     Food(
         name: "Tuna",
         price: "12.00",
-        imagePath: "lib/images/sushi.png",
+        imagePath: "lib/images/sushi_set.png",
         rating: "3.5"),
+        Food(
+        name: "Salmon",
+        price: "10.00",
+        imagePath: "lib/images/sushi_stick.png",
+        rating: "2.5"),
+        Food(
+        name: "Salmon",
+        price: "10.00",
+        imagePath: "lib/images/sushi_three.png",
+        rating: "2.5"),
+        Food(
+        name: "Salmon",
+        price: "10.00",
+        imagePath: "lib/images/sushi_img.png",
+        rating: "2.5"),
   ];
 
   void navigateToFoodDetails(int index) {
