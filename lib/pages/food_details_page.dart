@@ -10,29 +10,20 @@ class FoodDetailsPage extends StatefulWidget {
   State<FoodDetailsPage> createState() => _FoodDetailsPageState();
 }
 
-
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
+  int quantityCount = 0;
 
-int quantityCount = 0;
+  void decrismentQuantity() {
+    setState(() {
+      quantityCount--;
+    });
+  }
 
-
-void decrismentQuantity () {
-  setState(() {
-    quantityCount--;
-  });
-}
-
-
-void incrismentQuantity () {
-  setState(() {
-    quantityCount++;
-  });
-}
-
-
-
-
-
+  void incrismentQuantity() {
+    setState(() {
+      quantityCount++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,33 +85,30 @@ void incrismentQuantity () {
           ),
           Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(25),
-                color: primaryColor,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "\$" + widget.food.price,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18),
-                        ),
-                        Row(
-                          children: [
-                             Container(
-                              child: IconButton(
-                                icon: const Icon(Icons.remove, color: Colors.white,),
-                                onPressed: decrismentQuantity,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    )
-                  ],
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(25),
+                  color: primaryColor,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "\$" + widget.food.price,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.remove, color: Colors.white),
+                            onPressed: decrismentQuantity,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
