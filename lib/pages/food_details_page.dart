@@ -55,7 +55,15 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10)
+                  const SizedBox(height: 10),
+                  Text(
+"Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna or imitation crab meat.",
+style: TextStyle(
+  color: Colors.grey[800],
+  fontSize: 14,
+  height: 2,
+),
+                  )
                 ],
               ),
             ),
