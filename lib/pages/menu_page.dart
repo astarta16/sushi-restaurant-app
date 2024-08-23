@@ -40,7 +40,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 224, 216, 214),
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245), 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -51,7 +51,7 @@ class _MenuPageState extends State<MenuPage> {
         title: Text(
           "Tokyo",
           style: TextStyle(
-              color: Colors.grey[900],
+              color: Colors.grey[900], 
               fontSize: 24,
               fontWeight: FontWeight.bold),
         ),
@@ -62,10 +62,10 @@ class _MenuPageState extends State<MenuPage> {
           Container(
             decoration: BoxDecoration(
               color: primaryColor,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(12),
             ),
-            margin: const EdgeInsets.symmetric(horizontal: 25),
-            padding: const EdgeInsets.all(25),
+            margin: const EdgeInsets.all(20), 
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -94,36 +94,34 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 20.0,
-          ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: "Search for sushi...",
-                hintStyle: TextStyle(color: Colors.grey[500]),
-                prefixIcon: Icon(Icons.search, color: Colors.grey[500]),
+                hintStyle: TextStyle(color: Colors.grey[600]), 
+                prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
                 border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(20)),
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 filled: true,
                 fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: primaryColor),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
             ),
           ),
           const SizedBox(height: 25.0),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Food Menu",
               style: TextStyle(
                 fontWeight: FontWeight.w900,
-                color: Colors.grey,
+                color: Colors.grey[850], 
                 fontSize: 18,
               ),
             ),
@@ -131,7 +129,7 @@ class _MenuPageState extends State<MenuPage> {
           const SizedBox(height: 10),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 5.0),
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: foodMenu.length,
@@ -142,28 +140,25 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(20),
+              color: Colors.grey[200], 
+              borderRadius: BorderRadius.circular(12),
             ),
-            margin:
-                const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
+            margin: const EdgeInsets.all(20), 
             padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('lib/images/sushi_three.png', height: 60),
-                const Column(
+              const  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "Salmon Eggs",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       '\$21.00',
                       style: TextStyle(color: Colors.black, fontSize: 16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_app/models/food.dart';
-import 'package:sushi_app/theme/colors.dart'; // Assuming this is where primaryColor is defined
+import 'package:sushi_app/theme/colors.dart'; 
 
 class FoodDetailsPage extends StatefulWidget {
   final Food food;
@@ -27,7 +27,8 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
     });
   }
 
-  void addToCard() {}
+  void addToCard() {
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +50,13 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                     children: [
                       Icon(
                         Icons.star,
-                        color: Colors.orange[400],
+                        color: Theme.of(context).primaryColor,
                       ),
                       const SizedBox(width: 10),
                       Text(
                         "${widget.food.rating}",
                         style: TextStyle(
-                          color: Colors.grey[600],
+                          color: Colors.grey[850], 
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -64,14 +65,14 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   const SizedBox(height: 10),
                   Text(
                     widget.food.name,
-                    style: const TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 28, color: Colors.grey[900]),
                   ),
                   const SizedBox(height: 30),
                   Text(
                     "Description",
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.grey[800],
+                      color: Colors.grey[800], 
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -79,7 +80,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   Text(
                     "Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice. It is very often prepared with seafood, such as squid, eel, yellowtail, salmon, tuna, or imitation crab meat.",
                     style: TextStyle(
-                      color: Colors.grey[800],
+                      color: Colors.grey[700], 
                       fontSize: 14,
                       height: 2,
                     ),
@@ -120,7 +121,6 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 ),
               ],
             ),
-            
           ),
         ],
       ),
