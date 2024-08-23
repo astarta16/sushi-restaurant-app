@@ -27,6 +27,8 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
     });
   }
 
+  void addToCard() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,6 +120,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 ),
               ],
             ),
+            
           ),
         ],
       ),
